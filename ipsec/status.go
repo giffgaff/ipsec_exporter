@@ -34,7 +34,7 @@ type cliStatusProvider struct {
 }
 
 func (c *cliStatusProvider) statusOutput(tunnel connection) (string, error) {
-	cmd := exec.Command("ipsec", "statusall", tunnel.name)
+	cmd := exec.Command("strongswan", "statusall", tunnel.name)
 	out, err := cmd.Output()
 
 	if err != nil {
